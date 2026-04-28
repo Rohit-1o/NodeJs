@@ -1,0 +1,162 @@
+				Rohit_0020
+===========================================================================================
+Q1)
+	
+let emp = {
+    ename : "smith",
+    sal : 50000,
+    comm : 5000,
+    deptno : 10,
+    married : true
+};
+module.exports=emp;
+
+testEmp
+
+let testEmp = require('./emp');
+console.log(testEmp);
+
+let testDept = require('./dept');
+console.log(testDept);
+
+===========================================================================================
+Q2)
+
+let dept = {
+    deptno : 10,
+    dname : "research",
+    loc : "new york"
+};
+module.exports=dept;
+
+testEmp
+
+let testEmp = require('./emp');
+console.log(testEmp);
+
+let testDept = require('./dept');
+console.log(testDept);
+
+
+===========================================================================================
+Q3)
+// creating an instance of http module
+const http = require("http");
+const port=8084;
+// callback
+http.createServer(function(req, res) {
+    res.write("Fname : Rohit\n");
+    res.write("Lname : Goud\n");
+    res.write("College : YCP AIT\n");
+    res.write("Address : Chembur\n");
+    res.write("Stream : Computer Engineering\n");
+    res.end("this is the end of the program\n");
+}).listen(port);
+console.log(`running on, ${port}`)
+console.log("Server running at http://127.0.0.1:8084");
+
+===========================================================================================
+Q4)
+for(let i=1; i<=100; i ++) {
+    console.log(i);
+}
+
+===========================================================================================
+Q5)
+for(let name = 1; name<=10; name++) {
+    console.log("Rohit Goud\n");
+}
+
+===========================================================================================
+Q6)
+function print_odd() {
+    for (let i=1; i<=10; i+=2) {
+        console.log(i);
+    }
+}
+
+
+function print_even() {
+    for(let i=2; i<=10; i +=2) {
+        console.log(i);
+    }
+}
+console.log("=======");
+console.log("  ODD  ");
+console.log("=======");
+print_odd();
+console.log("========");
+console.log("  EVEN ");
+console.log("========");
+print_even();
+
+===========================================================================================
+Q7)
+function sum() {
+    let sum = 0;
+    for(let i = 1; i<=10; i++) {
+    sum += i;
+    }
+    console.log(sum);
+}
+sum();
+
+===========================================================================================
+Q8)
+const arr=["Rohit","Prince",
+    "Amit","Pankaj",
+    "Gopal","Mukund",
+    "Jaydeep","Aryan",
+    "Vedant","Rahul"];
+arr.forEach(val => console.log(val));
+console.log("=======");
+console.log(arr.length);
+console.log("=======");
+
+===========================================================================================
+Q9)
+const arr=[1,2,3,4,5,6,7,8,9,10];
+console.log(arr.map((num) => `7 X ${num} = ${7*num} `));
+
+===========================================================================================
+Q10)
+let result =(num1,num2,num3)=>{ 
+        console.log(`Subtraction is : ${num1} - ${num2} - ${num3} = ${num1-num2-num3}`); 
+        console.log(`Multiplication is : ${num1} * ${num2} * ${num3} = ${num1*num2*num3}`);
+};
+console.log(result(5,3,2));
+
+===========================================================================================
+Q11)
+function print_even(callback){
+    console.log("Even numbers");
+
+    for(let i = 2; i <= 20; i += 2){
+        console.log(i);
+    }
+
+    callback();
+}
+function print_odd(){
+    console.log("Odd numbers");
+
+    for(let i = 1; i < 20; i += 2){
+        console.log(i);
+    }
+}
+print_even(print_odd);
+
+===========================================================================================
+Q12)
+const fs = require("fs");
+function readFileData(){
+    fs.readFile("myfile.txt", "utf8", function(err, data){
+        if(err){
+            console.log("Error reading file:", err);
+            return;
+        }
+        console.log("File Content:\n" + data);
+    });
+}
+readFileData();
+
